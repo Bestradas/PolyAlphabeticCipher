@@ -1,4 +1,4 @@
-""" This programme implements a polyalphabetic cipher. """
+""" Este programa implementa un cifrado polialfabético """
 
 import string
 
@@ -11,7 +11,7 @@ class PolyAlphabeticCipher:
 
     def cycle_get(lst, index):
         """
-        If the list ends go back to the start.
+        si la lista finaliza volver al inicio.
         >>> cycle_get(["lorem","ipsum","dolor","sit"],8)
         "lorem"
         """
@@ -21,8 +21,8 @@ class PolyAlphabeticCipher:
 
     def cycle_increment_index(index, lst):
         """
-        If at the end: go back to the start
-        else: increment.
+        Si es el final: volver al principio
+        sino: incrementar.
         >>> cycle_increment_index(0,["a","b","c"])
         1
         >>> cycle_increment_index(2,["a","b","c"])
@@ -37,8 +37,8 @@ class PolyAlphabeticCipher:
 
     def shift(letter, value):
         """
-        Shifts a letter in the alphabet by the value,
-        if the alphabet ends go back to the start.
+        Cambia una letra del alfabeto por el valor,
+        si el alfabeto termina, vuelve al principio.
         >>> shift('a',5)
         f
         >>> "".join([shift(i,20) for i in "hello"])
@@ -51,8 +51,8 @@ class PolyAlphabeticCipher:
 
     def convert_key_to_numbers(key):
         """
-        Uses the alphabetic value of letters to convert a word
-        to a list of numbers.
+        Utiliza el valor alfabético de las letras para convertir una palabra
+        a una lista de numeros.
         >>> convert_key_to_numbers("abcde")
         [0,1,2,3,4]
         >>> convert_key_to_numbers("example")
@@ -63,7 +63,7 @@ class PolyAlphabeticCipher:
 
     def encrypt(self, text, key, reverse_operation=False):
         """
-        Encrypts the text with a polyalphabetic cipher.
+        Encripta el texto con un cifrado polialfabetico.
         >>> encrypt("lorem ipsum dolor sit amet, consectetur adipiscing elit","latine")
         'wokmz masnu qswok avx lmxb, psysxkgieuk iqmailkvrr eeqg'
         >>> encrypt("the quick brown fox jumps over the lazy dog","gvufigfwiufw")
@@ -87,7 +87,7 @@ class PolyAlphabeticCipher:
 
     def decrypt(self,text, key):
         """
-        Decrypts the text previously encrypted with a polyalphabetic cipher.
+        desencripta el texto previamente desencriptado con un cifrado polialfabetico.
         >>> decript('wokmz masnu qswok avx lmxb, psysxkgieuk iqmailkvrr eeqg',"latine")
         'lorem ipsum dolor sit amet, consectetur adipiscing elit'
         >>> decrypt("zcy vcohg jltst aic rarla iaax obj tgeu lil","gvufigfwiufw")
